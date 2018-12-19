@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D5F2B9E-2E6F-4CDD-B198-3A3B49CF9AB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ThanhTDSE62847_Final_Project</RootNamespace>
+    <AssemblyName>ThanhTDSE62847-Final Project</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MyConnection">
+      <HintPath>..\MyConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\Class1.cs" />
+    <Compile Include="DAO\DaiLyDAO.cs" />
+    <Compile Include="DAO\DangNhapDAO.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\NhaXBDAO.cs" />
+    <Compile Include="DAO\SachDAO.cs" />
+    <Compile Include="frmChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDaiLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDaiLy.Designer.cs">
+      <DependentUpon>frmDaiLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachThongKeSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachThongKeSach.Designer.cs">
+      <DependentUpon>frmDanhSachThongKeSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhaXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhaXB.Designer.cs">
+      <DependentUpon>frmNhaXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyDaiLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyDaiLy.Designer.cs">
+      <DependentUpon>frmQuanLyDaiLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNXB.Designer.cs">
+      <DependentUpon>frmQuanLyNXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyCungCapSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyCungCapSach.Designer.cs">
+      <DependentUpon>frmQuanLyCungCapSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLySach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLySach.Designer.cs">
+      <DependentUpon>frmQuanLySach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSach.Designer.cs">
+      <DependentUpon>frmSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyHoaDon.Designer.cs">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoMoiHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoMoiHoaDon.Designer.cs">
+      <DependentUpon>frmTaoMoiHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLySachDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySachDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySachEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySachEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySachEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySachEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySachEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblChiTietHoaDon.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDaiLy.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDangNhap.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHoaDon.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNhaXB.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSach.cs">
+      <DependentUpon>QuanLySachEF.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDaiLy.resx">
+      <DependentUpon>frmDaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachThongKeSach.resx">
+      <DependentUpon>frmDanhSachThongKeSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhaXB.resx">
+      <DependentUpon>frmNhaXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyDaiLy.resx">
+      <DependentUpon>frmQuanLyDaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNXB.resx">
+      <DependentUpon>frmQuanLyNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyCungCapSach.resx">
+      <DependentUpon>frmQuanLyCungCapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLySach.resx">
+      <DependentUpon>frmQuanLySach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSach.resx">
+      <DependentUpon>frmSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyHoaDon.resx">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoMoiHoaDon.resx">
+      <DependentUpon>frmTaoMoiHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="SachRP.rdlc" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QuanLySachDBDataSet.xsc">
+      <DependentUpon>QuanLySachDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySachDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLySachDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLySachDBDataSet.xss">
+      <DependentUpon>QuanLySachDBDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="QuanLySachEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLySachEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLySachEF.edmx.diagram">
+      <DependentUpon>QuanLySachEF.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLySachEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLySachEF.edmx</DependentUpon>
+      <LastGenOutput>QuanLySachEF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLySachEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLySachEF.edmx</DependentUpon>
+      <LastGenOutput>QuanLySachEF.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

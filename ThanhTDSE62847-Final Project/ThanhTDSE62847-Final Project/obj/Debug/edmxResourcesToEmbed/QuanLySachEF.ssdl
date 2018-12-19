@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySachDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblChiTietHoaDon">
+    <Key>
+      <PropertyRef Name="soHoaDon" />
+      <PropertyRef Name="maSach" />
+    </Key>
+    <Property Name="soHoaDon" Type="int" Nullable="false" />
+    <Property Name="maSach" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="soLuong" Type="int" />
+    <Property Name="ghiChu" Type="nvarchar" MaxLength="100" />
+    <Property Name="hieuLuc" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDaiLy">
+    <Key>
+      <PropertyRef Name="maDaiLy" />
+    </Key>
+    <Property Name="maDaiLy" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenDaiLy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenChuDaiLy" Type="nvarchar" MaxLength="50" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="dienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="cungCap" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDangNhap">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHoaDon">
+    <Key>
+      <PropertyRef Name="soHoaDon" />
+    </Key>
+    <Property Name="soHoaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ngayLapHD" Type="date" />
+    <Property Name="maDaiLy" Type="nvarchar" MaxLength="10" />
+    <Property Name="hieuLuc" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblNhaXB">
+    <Key>
+      <PropertyRef Name="maNhaXB" />
+    </Key>
+    <Property Name="maNhaXB" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenNhaXB" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="dienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="cungCap" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSach">
+    <Key>
+      <PropertyRef Name="maSach" />
+    </Key>
+    <Property Name="maSach" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenSach" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tenTacGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="giaBia" Type="nvarchar" MaxLength="10" />
+    <Property Name="giaBanChoDaiLy" Type="nvarchar" MaxLength="10" />
+    <Property Name="maNhaXB" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="trang" Type="int" />
+    <Property Name="cungCap" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblChiTietHoaDon_tblHoaDon">
+    <End Role="tblHoaDon" Type="Self.tblHoaDon" Multiplicity="1" />
+    <End Role="tblChiTietHoaDon" Type="Self.tblChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHoaDon">
+        <PropertyRef Name="soHoaDon" />
+      </Principal>
+      <Dependent Role="tblChiTietHoaDon">
+        <PropertyRef Name="soHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChiTietHoaDon_tblSach">
+    <End Role="tblSach" Type="Self.tblSach" Multiplicity="1" />
+    <End Role="tblChiTietHoaDon" Type="Self.tblChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSach">
+        <PropertyRef Name="maSach" />
+      </Principal>
+      <Dependent Role="tblChiTietHoaDon">
+        <PropertyRef Name="maSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHoaDon_tblDaiLy">
+    <End Role="tblDaiLy" Type="Self.tblDaiLy" Multiplicity="0..1" />
+    <End Role="tblHoaDon" Type="Self.tblHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDaiLy">
+        <PropertyRef Name="maDaiLy" />
+      </Principal>
+      <Dependent Role="tblHoaDon">
+        <PropertyRef Name="maDaiLy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSach_tblNhaXB">
+    <End Role="tblNhaXB" Type="Self.tblNhaXB" Multiplicity="1" />
+    <End Role="tblSach" Type="Self.tblSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNhaXB">
+        <PropertyRef Name="maNhaXB" />
+      </Principal>
+      <Dependent Role="tblSach">
+        <PropertyRef Name="maNhaXB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLySachDBModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblChiTietHoaDon" EntityType="Self.tblChiTietHoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDaiLy" EntityType="Self.tblDaiLy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDangNhap" EntityType="Self.tblDangNhap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHoaDon" EntityType="Self.tblHoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNhaXB" EntityType="Self.tblNhaXB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSach" EntityType="Self.tblSach" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblChiTietHoaDon_tblHoaDon" Association="Self.FK_tblChiTietHoaDon_tblHoaDon">
+      <End Role="tblHoaDon" EntitySet="tblHoaDon" />
+      <End Role="tblChiTietHoaDon" EntitySet="tblChiTietHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChiTietHoaDon_tblSach" Association="Self.FK_tblChiTietHoaDon_tblSach">
+      <End Role="tblSach" EntitySet="tblSach" />
+      <End Role="tblChiTietHoaDon" EntitySet="tblChiTietHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHoaDon_tblDaiLy" Association="Self.FK_tblHoaDon_tblDaiLy">
+      <End Role="tblDaiLy" EntitySet="tblDaiLy" />
+      <End Role="tblHoaDon" EntitySet="tblHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSach_tblNhaXB" Association="Self.FK_tblSach_tblNhaXB">
+      <End Role="tblNhaXB" EntitySet="tblNhaXB" />
+      <End Role="tblSach" EntitySet="tblSach" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

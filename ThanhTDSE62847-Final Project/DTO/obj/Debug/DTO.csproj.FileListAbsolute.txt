@@ -1,0 +1,11 @@
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\DTO.dll
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\DTO.pdb
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\obj\Debug\DTO.dll
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\obj\Debug\DTO.pdb
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\EntityFramework.dll
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\EntityFramework.SqlServer.dll
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\EntityFramework.xml
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\bin\Debug\EntityFramework.SqlServer.xml
+D:\FPT\CN5\New Folder\ThanhTDSE62847-Final Project\DTO\obj\Debug\DTO.csproj.CopyComplete
